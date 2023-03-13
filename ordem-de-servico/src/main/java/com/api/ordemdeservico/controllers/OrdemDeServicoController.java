@@ -69,7 +69,22 @@ public class OrdemDeServicoController {
         return ResponseEntity.status(HttpStatus.OK).body("Ordem de serviço deletada com sucesso");
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateOrdemDeServico(@PathVariable(value = "id") UUID id,
+                                                       @RequestBody @Valid OrdemDeServicoDto ordemDeServicoDto){
+        Optional<OrdemDeServicoModel> ordemDeServicoModelOptional = ordemDeServicoService.findById(id);
+        if (!ordemDeServicoModelOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ordem de serviço não encontrada.");
+        }
+        OrdemDeServicoModel ordemDeServicoModel = ordemDeServicoModelOptional.get();
+        ordemDeServicoModel.setNome(ordemDeServicoDto.getNome());
+        ordemDeServicoModel.setEndereco(ordemDeServicoDto.getEndereco());
+        ordemDeServicoModel.setCpf(ordemDeServicoDto.getCpf());
+        ordemDeServicoModel.setInscricaoEstadual(ordemDeServicoDto.getInscricaoEstadual());
+        ordemDeServicoModel.setFone(ordemDeServicoDto.getFone());
+        ordemDeServicoModel.setCondPagamento(ordemDeServicoDto.getCondPagamento());
+        return ResponseEntity.status(HttpStatus.OK).body(ordemDeServicoService.save(ordemDeServicoModel));
+    }
 
 
 
