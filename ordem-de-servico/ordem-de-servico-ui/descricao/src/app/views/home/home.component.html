@@ -13,6 +13,7 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
+  <img src="/assets/imagens/LogoBranca" alt="">
   <span>Rio Comunicação Visual</span>
   <span class="example-spacer"></span>
   <button
@@ -35,9 +36,41 @@
 
 <div class="container">
 
+
+
+
+
   <mat-card class="card-formulario">
+
+    <mat-card class="logo">
+      <mat-card-content>
+        <img src="assets/img/LogoColorida.png" alt="">
+      </mat-card-content>
+
+      <div class="textoTitulo">
+        <p>
+          Adesivos - Banners - Perfurados - Placas - Lonas - Envelopamentos
+        </p>
+        <p>
+          Cartão de Visitas - Panfletos - Criação de Logomarcas
+        </p>
+      </div>
+
+      <div class="textoTitulo2">
+        <p>
+          (61) 9 9999-9999 / 3333-3333
+        </p>
+
+      </div>
+
+
+    </mat-card>
+
+
+
     <form class="example-form">
       <table class="example-full-width" cellspacing="0">
+
         <tr>
           <td>
             <mat-form-field class="example-full-width">
@@ -96,101 +129,218 @@
         </tr>
       </table>
 
-      <div class="materiais">
 
-        <mat-card class="selecao">
-          <mat-card-content><mat-form-field appearance="fill">
+      <div class="tableProdutos">
+        <div class="inputMidias">
+          <span>Item 1</span>
+          <mat-form-field appearance="fill">
             <mat-label>Midia</mat-label>
             <mat-select>
               <mat-option>None</mat-option>
               <mat-option *ngFor="let midia of midia" [value]="midia">{{midia}}</mat-option>
             </mat-select>
-          </mat-form-field></mat-card-content>
+          </mat-form-field>
 
-
-          <mat-card-content><mat-form-field appearance="fill">
+          <mat-form-field appearance="fill">
             <mat-label>Acabamento</mat-label>
             <mat-select>
               <mat-option>None</mat-option>
               <mat-option *ngFor="let acabamento of acabamento" [value]="acabamento">{{acabamento}}</mat-option>
             </mat-select>
-          </mat-form-field></mat-card-content>
+          </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field appearance="fill">
             <mat-label>Largura</mat-label>
-            <input matInput placeholder />
+            <input matInput>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
+          <mat-form-field appearance="fill">
             <mat-label>Altura</mat-label>
-            <input matInput placeholder />
+            <input matInput>
           </mat-form-field>
 
-          <mat-card-content><mat-form-field appearance="fill">
-            <mat-label>Valor</mat-label>
-            <mat-select>
-              <mat-option>Valor</mat-option>
-              <mat-option *ngFor="let valor of valor" [value]="valor">{{valor}}</mat-option>
-            </mat-select>
-          </mat-form-field></mat-card-content>
+          <mat-form-field appearance="fill">
+            <mat-label>Valor Unitário</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Quantidade</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Valor Total</mat-label>
+            <input matInput>
+          </mat-form-field>
 
 
 
-        </mat-card>
+        </div>
       </div>
 
-      <mat-list>
-        <mat-list-item>Item 1</mat-list-item>
-        <mat-card-content><mat-form-field appearance="fill">
-          <mat-label>Midia</mat-label>
-          <mat-select>
-            <mat-option>None</mat-option>
-            <mat-option *ngFor="let midia of midia" [value]="midia">{{midia}}</mat-option>
-          </mat-select>
-        </mat-form-field></mat-card-content>
-        <mat-divider></mat-divider>
-        <mat-list-item>Item 2</mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>Item 3</mat-list-item>
-      </mat-list>
+      <div class="tableProdutos">
+        <div class="inputMidias">
+          <span>Item 2</span>
+          <mat-form-field appearance="fill">
+            <mat-label>Midia</mat-label>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let midia of midia" [value]="midia">{{midia}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Acabamento</mat-label>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let acabamento of acabamento" [value]="acabamento">{{acabamento}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Largura</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Altura</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Valor Unitário</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Quantidade</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Valor Total</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+        </div>
+      </div>
+
+      <div class="tableProdutos">
+        <div class="inputMidias">
+          <span>Item 3</span>
+          <mat-form-field appearance="fill">
+            <mat-label>Midia</mat-label>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let midia of midia" [value]="midia">{{midia}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Acabamento</mat-label>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let acabamento of acabamento" [value]="acabamento">{{acabamento}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Largura</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Altura</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Valor Unitário</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Quantidade</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Valor Total</mat-label>
+            <input matInput>
+          </mat-form-field>
 
 
 
-
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="position">
-
-
-
-          <th mat-header-cell *matHeaderCellDef>No.</th>
-          <td mat-cell *matCellDef="let element">{{ element.position }}</td>
-        </ng-container>
-
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Name</th>
-          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-        </ng-container>
-
-        <!-- Weight Column -->
-        <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef>Weight</th>
-          <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="symbol">
-          <th mat-header-cell *matHeaderCellDef>Symbol</th>
-          <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-      </table>
+        </div>
+      </div>
     </form>
 
+
+    <!--Inicio da table Loiane-->
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Coluna Item -->
+      <ng-container matColumnDef="item">
+        <th mat-header-cell *matHeaderCellDef> Item </th>
+        <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+      </ng-container>
+
+      <!-- Coluna Mídia -->
+      <ng-container matColumnDef="midia">
+        <th mat-header-cell *matHeaderCellDef> Midia </th>
+        <td mat-cell *matCellDef="let element"> {{element.midia}} </td>
+      </ng-container>
+
+      <!-- Coluna Acabamento -->
+      <ng-container matColumnDef="acabamento">
+        <th mat-header-cell *matHeaderCellDef> Acabamento </th>
+        <td mat-cell *matCellDef="let element"> {{element.acabamento}} </td>
+      </ng-container>
+
+      <!-- Coluna Largura -->
+      <ng-container matColumnDef="largura">
+        <th mat-header-cell *matHeaderCellDef> Largura </th>
+        <td mat-cell *matCellDef="let element"> {{element.largura}} </td>
+      </ng-container>
+
+      <!-- Coluna Altura -->
+      <ng-container matColumnDef="altura">
+        <th mat-header-cell *matHeaderCellDef> Altura </th>
+        <td mat-cell *matCellDef="let element"> {{element.altura}} </td>
+      </ng-container>
+
+      <!-- Coluna Valor Unitário -->
+      <ng-container matColumnDef="valorUnitario">
+        <th mat-header-cell *matHeaderCellDef> Valor Unitario </th>
+        <td mat-cell *matCellDef="let element"> {{element.valorUnitario}} </td>
+      </ng-container>
+
+      <!-- Coluna Quantidade -->
+      <ng-container matColumnDef="quantidade">
+        <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+        <td mat-cell *matCellDef="let element"> {{element.quantidade}} </td>
+      </ng-container>
+
+      <!-- Valor Total -->
+      <ng-container matColumnDef="valorTotal">
+        <th mat-header-cell *matHeaderCellDef> Valor Total </th>
+        <td mat-cell *matCellDef="let element"> {{element.valorTotal}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+
   </mat-card>
+
   <br />
+
 
 </div>

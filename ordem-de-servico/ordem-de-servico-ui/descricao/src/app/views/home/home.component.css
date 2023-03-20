@@ -24,15 +24,42 @@
   background-color: #2377b4;
 }
 
+.card-formulario{
+  width: 80%;
+}
+
+.logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #fa8314;
+}
+
+.textoTitulo{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.textoTitulo2{
+  margin-left: 470px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+img{
+  height: 100px;
+  margin-left: 50px;
+}
+
 .container{
-  background-color: #d1e4f3;
   display: flex;
   justify-content: center;
 }
 
-.card-formulario{
-  width: 50%;
-}
 
 .example-form {
   margin: 45px;
@@ -42,19 +69,50 @@
   width: 100%;
 }
 
-td {
-  padding-right: 8px;
-}
-
-.materiais{
-  width: 100%;
+.tableProdutos{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.selecao{
   flex-direction: row;
-  align-items: baseline;
-
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.tableProdutos td, th{
+  border: #00558f 1px solid;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+}
+
+.tableProdutos td{
+  border: #00558f 1px solid;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+}
+
+.produtos{
+  border-collapse: collapse;
+  color: #2377b4;
+  width: 100%;
+}
+
+.inputMidias{
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #2377b4;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
