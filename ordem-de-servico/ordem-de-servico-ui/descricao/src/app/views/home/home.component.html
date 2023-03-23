@@ -1,44 +1,4 @@
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
-
-<mat-toolbar class="toolbar">
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <img src="/assets/imagens/LogoBranca" alt="">
-  <span>Rio Comunicação Visual</span>
-  <span class="example-spacer"></span>
-  <button
-    mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
-  >
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with share icon"
-  >
-    <mat-icon>share</mat-icon>
-  </button>
-</mat-toolbar>
-
-<div class="linha"></div>
-
 <div class="container">
-
-
-
-
 
   <mat-card class="card-formulario">
 
@@ -160,7 +120,7 @@
           </mat-form-field>
 
           <mat-form-field appearance="fill">
-            <mat-label>Valor Unitário</mat-label>
+            <mat-label>Valor M²</mat-label>
             <input matInput>
           </mat-form-field>
 
@@ -170,116 +130,25 @@
           </mat-form-field>
 
           <mat-form-field appearance="fill">
-            <mat-label>Valor Total</mat-label>
+            <mat-label>Preço Total</mat-label>
             <input matInput>
           </mat-form-field>
 
-
-
+          <button mat-raised-button color="basic">Enviar</button>
         </div>
       </div>
 
-      <div class="tableProdutos">
-        <div class="inputMidias">
-          <span>Item 2</span>
-          <mat-form-field appearance="fill">
-            <mat-label>Midia</mat-label>
-            <mat-select>
-              <mat-option>None</mat-option>
-              <mat-option *ngFor="let midia of midia" [value]="midia">{{midia}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Acabamento</mat-label>
-            <mat-select>
-              <mat-option>None</mat-option>
-              <mat-option *ngFor="let acabamento of acabamento" [value]="acabamento">{{acabamento}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Largura</mat-label>
-            <input matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Altura</mat-label>
-            <input matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Valor Unitário</mat-label>
-            <input matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Quantidade</mat-label>
-            <input matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Valor Total</mat-label>
-            <input matInput>
-          </mat-form-field>
-
-        </div>
-      </div>
-
-      <div class="tableProdutos">
-        <div class="inputMidias">
-          <span>Item 3</span>
-          <mat-form-field appearance="fill">
-            <mat-label>Midia</mat-label>
-            <mat-select>
-              <mat-option>None</mat-option>
-              <mat-option *ngFor="let midia of midia" [value]="midia">{{midia}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Acabamento</mat-label>
-            <mat-select>
-              <mat-option>None</mat-option>
-              <mat-option *ngFor="let acabamento of acabamento" [value]="acabamento">{{acabamento}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Largura</mat-label>
-            <input matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Altura</mat-label>
-            <input matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Valor Unitário</mat-label>
-            <input matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Quantidade</mat-label>
-            <input matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Valor Total</mat-label>
-            <input matInput>
-          </mat-form-field>
+      <!--Tabela com adição e remoção-->
 
 
 
-        </div>
-      </div>
+
     </form>
 
 
     <!--Inicio da table Loiane-->
 
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="home" class="mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
@@ -328,7 +197,7 @@
 
       <!-- Valor Total -->
       <ng-container matColumnDef="valorTotal">
-        <th mat-header-cell *matHeaderCellDef> Valor Total </th>
+        <th mat-header-cell *matHeaderCellDef> Preço Total </th>
         <td mat-cell *matCellDef="let element"> {{element.valorTotal}} </td>
       </ng-container>
 

@@ -54,6 +54,13 @@ export class HomeComponent implements OnInit {
   ];
 }
 
+/*Tabela com adição e remoção*/
+
+
+
+
+
+
 /**Inicio Table Loiane*/
 export interface PeriodicElement {
   item: number;
@@ -72,3 +79,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 
+function calcular(larg: number, alt: number, valorM: number, qtd: number, valorTot: number): number {
+  let resultadoMultiplicacao: number = larg * alt * valorM;
+  let resultadoFinal: number = resultadoMultiplicacao * valorTot;
+  return valorTot;
+}
+
+function adicionar() {
+  //pega os valores da linha, calcula o valor total utilizando a função "calcular" e persiste os dados no banco de dados
+  //ao persistir no banco de dados, dar um refresh na grid
+}
+
+let resultado: number = calcular(5,2,45,2,50);
+console.log(resultado);

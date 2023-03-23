@@ -1,3 +1,6 @@
 [
-  {"item": "1", "midia": "Adesivo", "acabamento": "Refilado", "largura": "0.80", "altura": "1.20", "valorUnitario": "70.00", "quantidade": "1", "valorTotal": "70.00"}
+  {"item": "1", "midia": "Adesivo", "acabamento": "Refilado", "largura": "0.80", "altura": "1.20", "valorUnitario": "70.00", "quantidade": "1", "valorTotal": "70.00"},
+  {"item": "2", "midia": "Adesivo", "acabamento": "Refilado", "largura": "0.80", "altura": "1.20", "valorUnitario": "70.00", "quantidade": "1", "valorTotal": "70.00"},
+  {"item": "3", "midia": "Adesivo", "acabamento": "Refilado", "largura": "0.80", "altura": "1.20", "valorUnitario": "70.00", "quantidade": "1", "valorTotal": "70.00"}
+
 ]
