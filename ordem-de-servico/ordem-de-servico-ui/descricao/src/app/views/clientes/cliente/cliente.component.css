@@ -1,0 +1,50 @@
+/*
+.color1 { #4598d9 };
+.color2 { #3487c7 };
+.color3 { #2377b4 };
+.color4 { #1166a2 };
+.color5 { #00558f };
+*/
+
+mat-card{
+  width: 45%;
+  margin: 50px auto;
+  padding: 50px;
+}
+
+h1 {
+  color: #00558f;
+  font-family: 'Poppins', sans-serif;
+  height: 45px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+
+.example-form {
+
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+button {
+  width: 100%;
+  align-items: center;
+  background-color: #2377b4  !important;
+  color: #fff !important ;
+}
+
+
+
+
+
+
+
+

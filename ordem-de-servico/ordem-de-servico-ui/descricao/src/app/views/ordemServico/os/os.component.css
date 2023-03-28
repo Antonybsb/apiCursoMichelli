@@ -1,11 +1,42 @@
-.demo-table {
-  width: 100%;
+.card-formulario{
+  width: 80%;
 }
 
-.demo-button-container {
-  padding-bottom: 16px;
+.container{
+  display: flex;
+  justify-content: center;
 }
 
-.demo-button + .demo-button {
-  margin-left: 8px;
+
+.tableProdutos td, th{
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
 }
+
+
+table th, td{
+  text-align: center;
+  color: #00558f;
+}
+
+table th{
+  background-color: #4598d9;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  border: 0.5px solid #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -13,18 +13,26 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { OsComponent } from './views/ordemServico/os/os.component';
+import { ClienteComponent } from './views/clientes/cliente/cliente.component';
+import { PedidoComponent } from './views/pedido/pedido/pedido.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    OsComponent
+    OsComponent,
+    ClienteComponent,
+    PedidoComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,9 @@ import { OsComponent } from './views/ordemServico/os/os.component';
     MatSelectModule,
     MatDividerModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

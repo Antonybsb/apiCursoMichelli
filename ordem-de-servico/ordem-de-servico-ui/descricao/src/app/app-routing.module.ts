@@ -1,3 +1,5 @@
+import { PedidoComponent } from './views/pedido/pedido/pedido.component';
+import { ClienteComponent } from './views/clientes/cliente/cliente.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { NgModule } from '@angular/core';
@@ -7,15 +9,19 @@ import { OsComponent } from './views/ordemServico/os/os.component';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    component: HomeComponent,
   },
   {
     path: 'cadastro-de-clientes',
-    component: HomeComponent,
+    component: ClienteComponent,
   },
   {
     path: 'os',
     component: OsComponent,
+  },
+  {
+    path: 'pedido',
+    component: PedidoComponent,
   },
 ];
 

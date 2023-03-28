@@ -1,6 +1,9 @@
 
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatTable} from '@angular/material/table';
+import { Observable } from 'rxjs';
+import { Home } from 'src/app/home/model/home';
+import { HomeService } from 'src/app/home/services/home.service';
 
 @Component({
   selector: 'app-os',
@@ -8,86 +11,90 @@ import {MatTable} from '@angular/material/table';
   styleUrls: ['./os.component.css']
 })
 
-export class OsComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'altura'];
+export class OsComponent implements OnInit {
 
-  midia: Midia[] = [
-    {value: 'lona', viewValue: 'Lona 440g'},
-    {value: 'lona-promocional', viewValue: 'Lona Promocional'},
-    {value: 'lona-perfurada', viewValue: 'Lona Promocional'},
-    {value: 'lona-backlight', viewValue: 'Lona Sanete'},
-    {value: 'adesivo-normal', viewValue: 'Adesivo Normal'},
-    {value: 'adesivo-promocional', viewValue: 'Adesivo Promocional'},
-    {value: 'adesivo-transparente', viewValue: 'Adesivo Transparente'},
-    {value: 'adesivo-blackout', viewValue: 'Adesivo Blackout'},
-    {value: 'adesivo-jateado', viewValue: 'Adesivo Jateado'},
-    {value: 'adesivo-recorte', viewValue: 'Adesivo Para Recorte'},
-    {value: 'adesivo-perfurado', viewValue: 'Adesivo Perfurado'},
+  home: Observable<Home[]>;
+  displayedColumns: string[] = ['item', 'midia', 'acabamento', 'largura', 'altura', 'valorUnitario', 'quantidade', 'valorTotal'];
+  dataSource = ELEMENT_DATA;
+
+ // homeService: HomeService;
+
+  constructor(private homeService: HomeService){
+    //this.homeService = new HomeService();
+    this.home = this.homeService.list();
+
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  midia: string[] = [
+    'Lona 440g',
+    'Lona Promocional',
+    'Vinil Cast',
+    'Vinil Promocional',
+    'Vinil Transparente',
+    'Vinil Blackout',
+    'Vinil Jateado',
+    'Vinil Para Recorte',
+    'Vinil Perfurado',
+    'Vinil Impresso e Aplicado no PVC',
+    'Vinil Impresso e Recortado',
+    'Vinil + Refile',
+    'Vinil',
   ];
-  acabamento: Acabamento[] = [
-    {value: '10-cm', viewValue: 'Sobras de 10cm'},
-    {value: 'ilhos', viewValue: 'Ilhós'},
-    {value: 'refilado', viewValue: 'Refilado'},
-    {value: 'banner', viewValue: 'Banner'},
-    {value: 'ver-observacoes', viewValue: 'Descrito Na Observação'},
-  ]
-  valorUnitario: ValorUnitario[] = [
-    {value: 'valor-m', viewValue: 'Valor Do M²'},
-    {value: 'valor-total', viewValue: 'Valor Total'},
-  ]
-  dataSource = [...ELEMENT_DATA];
-
-  @ViewChild(MatTable)
-  table!: MatTable<PeriodicElement>;
-
-  addData() {
-    const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
-    this.dataSource.push(ELEMENT_DATA[randomElementIndex]);
-    this.table.renderRows();
-  }
-
-  removeData() {
-    this.dataSource.pop();
-    this.table.renderRows();
-  }
-
+  acabamento: string[] = [
+    'Banner',
+    'Refilado',
+    'Sobras Para Esticar',
+    'Ilhós',
+    'Ver Observações',
+  ];
+  valor: string[] = [
+    'Preço m²',
+    'Preço Total',
+  ];
 }
 
+/*Tabela com adição e remoção*/
+
+
+
+
+
+
+/**Inicio Table Loiane*/
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  item: number;
+  midia: string;
+  acabamento: string;
+  largura: number;
   altura: number;
-}
-
-interface Midia {
-  value: string;
-  viewValue: string;
-}
-
-interface Acabamento {
-  value: string;
-  viewValue: string;
-}
-
-interface ValorUnitario {
-  value: string;
-  viewValue: string;
+  valorUnitario: number;
+  quantidade: number;
+  valorTotal: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', altura: 1.50},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', altura: 1.50},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', altura: 1.50},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be', altura: 1.50},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B', altura: 1.50},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C', altura: 1.50},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N', altura: 1.50},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O', altura: 1.50},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F', altura: 1.50},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne', altura: 1.50},
+  {item: 1, midia: 'Adesivo', acabamento: 'Refilado', largura: 0.80, altura: 1.20, valorUnitario: 70.00, quantidade: 1, valorTotal: 70.00},
+
 ];
+
+
+function calcular(larg: number, alt: number, valorM: number, qtd: number, valorTot: number): number {
+  let resultadoMultiplicacao: number = larg * alt * valorM;
+  let resultadoFinal: number = resultadoMultiplicacao * valorTot;
+  return valorTot;
+}
+
+function adicionar() {
+  //pega os valores da linha, calcula o valor total utilizando a função "calcular" e persiste os dados no banco de dados
+  //ao persistir no banco de dados, dar um refresh na grid
+}
+
+let resultado: number = calcular(5,2,45,2,50);
+console.log(resultado);
 
 
 
