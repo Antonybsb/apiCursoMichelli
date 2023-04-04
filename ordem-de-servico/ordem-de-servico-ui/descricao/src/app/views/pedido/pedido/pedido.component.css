@@ -60,9 +60,13 @@ button {
 }
 
 .example-full-width {
-  width: 150px;
+  width: 140px;
 }
 
 mat-form-field {
-  width: 150px;
+  width: 140px;
+}
+
+button mat-raised-button {
+  background-color: aquamarine !important;
 }

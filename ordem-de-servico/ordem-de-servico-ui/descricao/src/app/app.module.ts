@@ -15,6 +15,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { FormsModule } from '@angular/forms';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -51,7 +53,9 @@ import { PedidoComponent } from './views/pedido/pedido/pedido.component';
     MatListModule,
     HttpClientModule,
     MatSidenavModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,7 +27,9 @@ h1 {
 }
 
 .example-full-width {
+  text-align: center;
   width: 100%;
+
 }
 
 td {
@@ -35,7 +37,7 @@ td {
 }
 
 button {
-  width: 100%;
+  width: 99%;
   align-items: center;
   background-color: #2377b4  !important;
   color: #fff !important ;

@@ -2,13 +2,15 @@ package com.api.ordemdeservico.models;
 
 import jakarta.persistence.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "CLIENTES")
-public class OrdemDeServicoModel implements Serializable {
+@Table(name = "TB_ClIENTE")
+public class ClienteModel implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -18,17 +20,50 @@ public class OrdemDeServicoModel implements Serializable {
     private String nome;
     @Column(nullable = false)
     private String endereco;
+    @Column(nullable = false)
+    private String bairro;
+    @Column(nullable = false)
+    private String cidade;
+    @Column(nullable = false, length = 2)
+    private String estado;
     @Column(nullable = false, unique = true, length = 13)
     private String cpf;
-    @Column(unique = true, length = 13)
-    private String inscricaoEstadual;
     @Column(nullable = true, length = 11)
     private String fone;
-    @Column(nullable = false)
-    private LocalDateTime dataEntrada;
-
     @Column(nullable = true)
-    private String condPagamento;
+    private LocalDateTime data_registro;
+
+    public LocalDateTime getData_registro() {
+        return data_registro;
+    }
+
+    public void setData_registro(LocalDateTime data_registro) {
+        this.data_registro = data_registro;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
 
     public UUID getId() {
@@ -63,13 +98,6 @@ public class OrdemDeServicoModel implements Serializable {
         this.cpf = cpf;
     }
 
-    public String getInscricaoEstadual() {
-        return inscricaoEstadual;
-    }
-
-    public void setInscricaoEstadual(String inscricaoEstadual) {
-        this.inscricaoEstadual = inscricaoEstadual;
-    }
 
     public String getFone() {
         return fone;
@@ -79,21 +107,7 @@ public class OrdemDeServicoModel implements Serializable {
         this.fone = fone;
     }
 
-    public LocalDateTime getDataEntrada() {
-        return dataEntrada;
-    }
 
-    public void setDataEntrada(LocalDateTime dataEntrada) {
-        this.dataEntrada = dataEntrada;
-    }
-
-    public String getCondPagamento() {
-        return condPagamento;
-    }
-
-    public void setCondPagamento(String condPagamento) {
-        this.condPagamento = condPagamento;
-    }
 
 
 
