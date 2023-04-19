@@ -1,0 +1,43 @@
+/*
+.color1 { #4598d9 };
+.color2 { #3487c7 };
+.color3 { #2377b4 };
+.color4 { #1166a2 };
+.color5 { #00558f };
+*/
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+img {
+  height: 50px;
+  margin-left: 60px;
+}
+
+span {
+  margin-left: 65px;
+}
+
+button {
+  color: #00558f !important;
+  margin-right: 100px;
+}
+
+.toolbar {
+  background-color: #00558f ;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  height: 70px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.linha{
+  height: 25px;
+  background-color: #2377b4;
+}
+
+
+
+

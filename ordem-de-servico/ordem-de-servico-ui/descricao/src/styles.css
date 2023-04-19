@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+.color1 { #4598d9 };
+.color2 { #3487c7 };
+.color3 { #2377b4 };
+.color4 { #1166a2 };
+.color5 { #00558f };
+*/
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.azulToolbar {
+  color: #00558f;
+}
+
+.azulNav {
+  color:  #2377b4 ;
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+

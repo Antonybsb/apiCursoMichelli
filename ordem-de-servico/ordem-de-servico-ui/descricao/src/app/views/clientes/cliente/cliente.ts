@@ -9,5 +9,4 @@ export class Cliente {
   fone!: string;
   data_registro!: Date;
 
-
 }

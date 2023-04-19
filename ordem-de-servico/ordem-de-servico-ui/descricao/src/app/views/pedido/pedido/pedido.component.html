@@ -123,13 +123,7 @@
           <mat-label>Quantidade</mat-label>
           <input matInput />
         </mat-form-field>
-        <button mat-raised-button color="basic">
-          <mat-icon>done</mat-icon>
-        </button>
-        <button mat-raised-button color="basic">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
+
     </ng-container>
 
 
@@ -137,9 +131,17 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
+  <button mat-raised-button color="basic">
+    <mat-icon>done</mat-icon>
+  </button>
+  <button mat-raised-button color="basic">
+    <mat-icon>delete</mat-icon>
+  </button>
+
 
 
     </form>
+
 
   </mat-card>
 

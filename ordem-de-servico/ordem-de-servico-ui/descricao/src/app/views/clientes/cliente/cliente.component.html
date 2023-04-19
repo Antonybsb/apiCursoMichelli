@@ -3,6 +3,8 @@
 
   <form #clienteForm="ngForm" (ngSubmit)="onSubmit()"  class="example-form">
 
+
+
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td>
@@ -71,10 +73,24 @@
 
     <table class="example-full-width" cellspacing="0">
       <tr>
-        <button type="submit" mat-raised-button color="basic">
-          Salvar
-          <mat-icon>done</mat-icon>
-        </button>
+        <td>
+          <button type="submit" mat-raised-button (click)="clienteSalvo()" color="basic">
+            Salvar
+            <mat-icon>done</mat-icon>
+          </button>
+        </td>
+        <td>
+          <button type="submit" mat-raised-button color="basic">
+            Editar
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+        <td>
+          <button type="submit" mat-raised-button color="basic">
+            Deletar
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
       </tr>
     </table>
   </form>

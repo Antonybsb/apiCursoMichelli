@@ -16,7 +16,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RequestMapping("/cadastro-de-cliente")
 public class ClienteController {
 
@@ -59,7 +59,7 @@ public class ClienteController {
     public ResponseEntity<Object> getOneCliente(@PathVariable(value = "id")UUID id){
         Optional<ClienteModel> clienteModelOptional = clienteService.findById(id);
         if (!clienteModelOptional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ordem de serviço não encontrada.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não Encontrado.");
         }
             return ResponseEntity.status(HttpStatus.OK).body(clienteModelOptional.get());
 
@@ -69,10 +69,10 @@ public class ClienteController {
     public ResponseEntity<Object> deleteCliente(@PathVariable(value = "id_cliente") UUID id){
         Optional<ClienteModel> clienteModelOptional = clienteService.findById(id);
         if (!clienteModelOptional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ordem de serviço não encontrada.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não Encontrado.");
         }
         clienteService.delete(clienteModelOptional.get());
-        return ResponseEntity.status(HttpStatus.OK).body("Ordem de serviço deletada com sucesso");
+        return ResponseEntity.status(HttpStatus.OK).body("Cliente Deletado com Sucesso");
     }
 
     @PutMapping("/{id}")
@@ -80,7 +80,7 @@ public class ClienteController {
                                                        @RequestBody @Valid ClienteDto clienteDto){
         Optional<ClienteModel> clienteModelOptional = clienteService.findById(id);
         if (!clienteModelOptional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ordem de serviço não encontrada.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não Encontrado.");
         }
         ClienteModel cadastroDeClienteModel = clienteModelOptional.get();
         cadastroDeClienteModel.setNome(clienteDto.getNome());

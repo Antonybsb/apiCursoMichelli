@@ -1,0 +1,35 @@
+<mat-sidenav-container class="nav">
+  <mat-sidenav
+    class="sidenav"
+    mode="side"
+    opened
+    fixedInViewport="true"
+    fixedTopGap="95"
+  >
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="/">
+        <i class="material-icons">
+          home
+        </i>
+        Início
+      </a>
+      <a mat-list-item routerLink="/cadastro-de-clientes">
+        <i class="material-icons"> storefront </i>
+        Cadastro de Clientes
+      </a>
+      <a mat-list-item routerLink="/buscar-clientes">
+        <i class="material-icons"> storefront </i>
+        Buscar Clientes
+      </a>
+      <a mat-list-item routerLink="/pedido">
+        <i class="material-icons"> storefront </i>
+        Novo Pedido
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
