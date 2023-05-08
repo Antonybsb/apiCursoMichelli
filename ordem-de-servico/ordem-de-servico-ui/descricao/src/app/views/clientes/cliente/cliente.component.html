@@ -1,7 +1,7 @@
 <mat-card>
   <h1>Cadastro De Cliente:</h1>
 
-  <form #clienteForm="ngForm" (ngSubmit)="onSubmit()"  class="example-form">
+  <form #clienteForm="ngForm"  class="example-form">
 
 
 
@@ -38,8 +38,17 @@
             <input type="text" [(ngModel)]="cliente.cidade" name="cidade" matInput placeholder="Ex. Taguatinga" />
           </mat-form-field>
         </td>
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Estado</mat-label>
+          <mat-select>
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let estado of estados" [value]="estado">{{estado}}</mat-option>
+            <input type="text" [(ngModel)]="cliente.estado" name="estado" matInput placeholder="Ex. Distrito Federal" />
+          </mat-select>
+        </mat-form-field> -->
+
         <td>
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-width">
             <mat-label>Estado:</mat-label>
             <input type="text" [(ngModel)]="cliente.estado" name="estado" matInput placeholder="Ex. Distrito Federal" />
           </mat-form-field>
@@ -61,12 +70,12 @@
             <input type="text" [(ngModel)]="cliente.fone" name="fone" matInput />
           </mat-form-field>
         </td>
-        <td>
+        <!-- <td>
           <mat-form-field class="example-full-width">
             <mat-label>Data de Cadastro:</mat-label>
             <input type="date" [ngModel]="cliente.data_registro" name="data_registro" matInput />
           </mat-form-field>
-        </td>
+        </td> -->
 
       </tr>
     </table>
@@ -74,21 +83,15 @@
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td>
-          <button type="submit" mat-raised-button (click)="clienteSalvo()" color="basic">
+          <button class="btnSalvar" type="submit" mat-raised-button (click)="createCliente()" color="basic">
             Salvar
             <mat-icon>done</mat-icon>
           </button>
         </td>
         <td>
-          <button type="submit" mat-raised-button color="basic">
-            Editar
-            <mat-icon>edit</mat-icon>
-          </button>
-        </td>
-        <td>
-          <button type="submit" mat-raised-button color="basic">
-            Deletar
-            <mat-icon>delete</mat-icon>
+          <button mat-raised-button (click)="cancel()" color="basic">
+            Cancelar
+            <mat-icon>done</mat-icon>
           </button>
         </td>
       </tr>

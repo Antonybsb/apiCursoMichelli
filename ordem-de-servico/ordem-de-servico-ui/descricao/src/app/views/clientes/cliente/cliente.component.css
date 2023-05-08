@@ -7,7 +7,7 @@
 */
 
 mat-card{
-  width: 45%;
+  width: 47%;
   margin: 50px auto;
   padding: 50px;
 }
@@ -44,6 +44,14 @@ button {
 }
 
 
+
+.example-full-width{
+  width: 100%;
+}
+
+.btnSalvar {
+  background-color: #008f40 !important;
+}
 
 
 

@@ -1,0 +1,94 @@
+<mat-card>
+  <h1>Excluir Cliente</h1>
+
+  <form #clienteForm="ngForm"  class="example-form">
+
+
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Nome:</mat-label>
+            <input matInput [value]="cliente.nome" name="nome" disabled />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Endereço</mat-label>
+            <input matInput [value]="cliente.endereco" name="endereco" disabled matInput />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Bairro:</mat-label>
+            <input matInput [value]="cliente.bairro" name="bairro" disabled matInput placeholder="Ex. Taguatinga Norte" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Cidade:</mat-label>
+            <input matInput [value]="cliente.cidade" name="cidade" disabled matInput placeholder="Ex. Taguatinga" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Estado:</mat-label>
+            <input matInput [value]="cliente.estado" name="estado" disabled matInput placeholder="Ex. Distrito Federal" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Cpf/Cnpj:</mat-label>
+            <input matInput [value]="cliente.cpf" name="cpf" disabled matInput />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Fone:</mat-label>
+            <input matInput [value]="cliente.fone" name="fone" disabled matInput />
+          </mat-form-field>
+        </td>
+<!--         <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Data de Cadastro:</mat-label>
+            <input type="date" [value]="cliente.data_registro" name="data_registro" disabled matInput />
+          </mat-form-field>
+        </td> -->
+
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <button mat-raised-button (click)="deleteCliente()" class="excluir">
+            Excluir
+            <mat-icon>done</mat-icon>
+          </button>
+        </td>
+        <td>
+          <button mat-raised-button (click)="cancel()">
+            Cancelar
+            <mat-icon>done</mat-icon>
+          </button>
+        </td>
+
+      </tr>
+    </table>
+  </form>
+</mat-card>
+
+

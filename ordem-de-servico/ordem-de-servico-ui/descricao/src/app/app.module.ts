@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -32,6 +32,13 @@ import { BuscarClienteComponent } from './views/tabelaBuscar/buscar-cliente/busc
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { ClienteUpdateComponent } from './views/tabelaBuscar/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './views/tabelaBuscar/cliente-delete/cliente-delete.component';
+
+registerLocaleData(localePt);
+
 
 
 
@@ -45,7 +52,9 @@ import { MatSortModule } from '@angular/material/sort';
     PedidoComponent,
     SidenavComponent,
     HeaderComponent,
-    BuscarClienteComponent
+    BuscarClienteComponent,
+    ClienteUpdateComponent,
+    ClienteDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -73,8 +82,12 @@ import { MatSortModule } from '@angular/material/sort';
     MatSortModule
 
   ],
-  providers: [
-    ClienteService
+  providers: [{
+
+    provide: LOCALE_ID,
+    useValue: 'pt-BR',
+  },
+  ClienteService
   ],
   bootstrap: [AppComponent]
 })

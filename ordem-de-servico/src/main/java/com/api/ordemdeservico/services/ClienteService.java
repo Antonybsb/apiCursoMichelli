@@ -44,4 +44,10 @@ public class ClienteService {
     public void delete(ClienteModel clienteModel) {
         clienteRepository.delete(clienteModel);
     }
+
+
+
+
+//    public void deletar(UUID id) {
+//    }
 }

@@ -1,5 +1,5 @@
 export class Cliente {
-  id!: number;
+  id!: string;
   nome!: string;
   endereco!: string;
   bairro!: string;
@@ -7,6 +7,6 @@ export class Cliente {
   estado!: string;
   cpf!: string;
   fone!: string;
-  data_registro!: Date;
+  data_registro?: Date;
 
 }

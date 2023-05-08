@@ -1,6 +1,7 @@
 package com.api.ordemdeservico.controllers;
 
 import com.api.ordemdeservico.dtos.ClienteDto;
+import com.api.ordemdeservico.dtos.DeleteClienteResponseDto;
 import com.api.ordemdeservico.models.ClienteModel;
 import com.api.ordemdeservico.services.ClienteService;
 import jakarta.validation.Valid;
@@ -66,14 +67,35 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteCliente(@PathVariable(value = "id_cliente") UUID id){
-        Optional<ClienteModel> clienteModelOptional = clienteService.findById(id);
+    public ResponseEntity<Object> deleteCliente(@PathVariable(value = "id") String id){
+        UUID uuid = UUID.fromString(id);
+
+        Optional<ClienteModel> clienteModelOptional = clienteService.findById(uuid);
         if (!clienteModelOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não Encontrado.");
         }
         clienteService.delete(clienteModelOptional.get());
         return ResponseEntity.status(HttpStatus.OK).body("Cliente Deletado com Sucesso");
     }
+
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Object> deleteCliente(@PathVariable(value = "id") UUID id){
+//
+//        Optional<ClienteModel> clienteModelOptional = clienteService.findById(id);
+//        if (!clienteModelOptional.isPresent()) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não Encontrado.");
+//        }
+//        clienteService.delete(clienteModelOptional.get());
+//        return ResponseEntity.status(HttpStatus.OK).body("Cliente Deletado com Sucesso");
+//    }
+
+
+
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deletar(@PathVariable("id") UUID id) {
+//        clienteService.deletar(id);
+//        return ResponseEntity.ok().build();
+//    }
 
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateCliente(@PathVariable(value = "id") UUID id,
